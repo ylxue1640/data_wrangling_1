@@ -18,6 +18,8 @@ library(tidyverse)
 
 ``` r
 library(skimr)
+library(readxl)
+library(haven)
 ```
 
 ## Read in some data
@@ -181,3 +183,21 @@ litter_df = read_csv("./data/FAS_litters.csv" )
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 check out ‘?read\_csv()’ for more information.
+
+## Other file formats
+
+Read in an excel file.
+
+``` r
+mlb_df = read_excel("./data/mlb11.xlsx")
+```
+
+``` r
+mlb_df = read_excel("./data/mlb11.xlsx",range = "A1:F7")
+```
+
+Read in a SAS file.
+
+``` r
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+```

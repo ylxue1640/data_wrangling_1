@@ -5,11 +5,11 @@ output: github_document
 
 ```{r setup}
 library(tidyverse)
+library(skimr)
+library(readxl)
+library(haven)
 ```
 
-```{r}
-library(skimr)
-```
 
 
 ## Read in some data
@@ -56,6 +56,26 @@ litter_df = read_csv("./data/FAS_litters.csv" )
 ```
 
 check out '?read_csv()' for more information.
+
+## Other file formats
+
+Read in an excel file.
+```{r}
+mlb_df = read_excel("./data/mlb11.xlsx")
+```
+
+```{r}
+mlb_df = read_excel("./data/mlb11.xlsx",range = "A1:F7")
+```
+
+Read in a SAS file.
+
+```{r}
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+```
+
+
+
 
 
 
